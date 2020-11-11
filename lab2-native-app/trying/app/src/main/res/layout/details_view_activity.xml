@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/reviewInput"
+        android:layout_width="225dp"
+        android:layout_height="148dp"
+
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.722" />
+
+    <TextView
+        android:id="@+id/reviewLabel"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="78dp"
+        android:background="#B9CB53"
+        android:fontFamily="casual"
+        android:gravity="center_horizontal"
+        android:text="Review"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/returnButton"
+        app:layout_constraintEnd_toStartOf="@+id/reviewInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingLabel" />
+
+    <TextView
+        android:id="@+id/titleLabel"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="10dp"
+        android:background="#B9CB53"
+        android:fontFamily="casual"
+        android:gravity="center_horizontal"
+        android:text="Title"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/directorLabel"
+        app:layout_constraintEnd_toStartOf="@+id/titleInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBanner" />
+
+    <TextView
+        android:id="@+id/titleInput"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="70dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/directorInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/titleLabel"
+        app:layout_constraintTop_toBottomOf="@+id/topBanner" />
+
+    <TextView
+        android:id="@+id/directorLabel"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="10dp"
+        android:background="#219D1F"
+        android:fontFamily="casual"
+        android:gravity="center_horizontal"
+        android:text="Director"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/dateLabel"
+        app:layout_constraintEnd_toStartOf="@+id/directorInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleLabel" />
+
+    <TextView
+        android:id="@+id/directorInput"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="11dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/dateInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/directorLabel"
+        app:layout_constraintTop_toBottomOf="@+id/titleInput" />
+
+    <TextView
+        android:id="@+id/dateLabel"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="10dp"
+        android:background="#B9CB53"
+        android:fontFamily="casual"
+        android:gravity="center_horizontal"
+        android:text="Date"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ratingLabel"
+        app:layout_constraintEnd_toStartOf="@+id/dateInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/directorLabel" />
+
+    <TextView
+        android:id="@+id/dateInput"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginBottom="9dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/ratingInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dateLabel"
+        app:layout_constraintTop_toBottomOf="@+id/directorInput" />
+
+    <TextView
+        android:id="@+id/ratingLabel"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="10dp"
+        android:background="#219D1F"
+        android:fontFamily="casual"
+        android:gravity="center_horizontal"
+        android:text="Rating"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/reviewLabel"
+        app:layout_constraintEnd_toStartOf="@+id/ratingInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateLabel" />
+
+    <TextView
+        android:id="@+id/ratingInput"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginBottom="22dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/reviewInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ratingLabel"
+        app:layout_constraintTop_toBottomOf="@+id/dateInput" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="90dp"
+        android:layout_height="67dp"
+        app:layout_constraintBottom_toTopOf="@+id/titleLabel"
+        app:layout_constraintEnd_toStartOf="@+id/topBanner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/topicon" />
+
+    <ImageView
+        android:id="@+id/topBanner"
+        android:layout_width="332dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginLeft="82dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bannerdetail" />
+
+    <ImageView
+        android:id="@+id/returnButton"
+        android:layout_width="236dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginRight="93dp"
+        android:onClick="go_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972"
+        app:srcCompat="@drawable/returnbutton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

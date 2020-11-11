@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Try1</string>
+    <string name="snail_logo">Snail</string>
+    <string name="popcorn_logo">Popcorn</string>
+    <string name="title_activity_second_homescreen">Second Homescreen</string>
+    <string name="snailmovieo">Snailmovieopedia</string>
+    <string name="mucus">Mucus</string>
+</resources>
