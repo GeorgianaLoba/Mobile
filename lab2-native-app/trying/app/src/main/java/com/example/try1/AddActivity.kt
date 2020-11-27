@@ -49,7 +49,7 @@ class AddActivity: AppCompatActivity() {
 
         val simpleDateFormat = SimpleDateFormat("dd-MM-yyyy")
         val date = simpleDateFormat.parse(dateText)
-        val movie = Movie(titleText, directorText, date , ratingText.toInt(), reviewText)
+        val movie = Movie("1", titleText, directorText, date, ratingText.toInt(), reviewText)
 
         if (correct) {
             val intent = Intent()

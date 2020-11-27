@@ -7,19 +7,22 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import io.realm.Realm
 import kotlinx.android.synthetic.main.list_view_activity.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 class ListViewActivity: AppCompatActivity() {
-    private val movies = mutableListOf<Movie>()
+    private lateinit var realm : Realm
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.list_view_activity)
-        initMovies()
+        //Realm.deleteRealm(Realm.getDefaultConfiguration())
+        realm = Realm.getDefaultInstance()
+        //initMovies()
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = RecyclerAdapter(movies)
+        recyclerView.adapter = RecyclerAdapter(realm)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -54,32 +57,67 @@ class ListViewActivity: AppCompatActivity() {
     }
 
     private fun add_movie(movie: Movie) {
-        movies.add(movie)
+        realm.beginTransaction()
+        val m = realm.createObject(MovieDTO::class.java, UUID.randomUUID().toString())
+        m.title = movie.title
+        m.rating = movie.rating
+        m.director = movie.director
+        m.review = movie.review
+        m.date = movie.date
+        realm.commitTransaction()
     }
 
     private fun edit_movie(movie: Movie, position: Int){
-        movies[position] = movie;
+        val movies = realm.where(MovieDTO::class.java).findAll()
+        realm.beginTransaction()
+        val id = movies[position]?.id
+        val m = realm.where(MovieDTO::class.java).equalTo("id", id).findFirst()!!
+        m.title = movie.title
+        m.rating = movie.rating
+        m.director = movie.director
+        m.review = movie.review
+        realm.commitTransaction()
     }
 
 
     private fun initMovies(){
         val simpleDateFormat = SimpleDateFormat("dd-MM-yyyy")
-
-        val movie1 = Movie("Night on Earth", "Jim Jarmusch", simpleDateFormat.parse("03-04-1999"), 9, "Some review...")
-        val movie2 = Movie("In the Mood for Love", "Wong Kar-wai", simpleDateFormat.parse("07-04-2001"), 10, "Some review...")
-        val movie3 = Movie("Pan's labyrinth", "Guillermo del Toro",simpleDateFormat.parse("10-04-2006"), 10, "Some review...")
-        val movie4 = Movie("Vertigo", "Alfred Hitchcock",simpleDateFormat.parse("10-04-1958"), 10, "Some review...")
-        val movie5 = Movie("Her", "Spike Jonze",simpleDateFormat.parse("02-02-2014"), 10, "Some review...")
-        val movie6 = Movie("Medianeras", "Gustavo Taretto",simpleDateFormat.parse("10-12-2011"), 7, "Some review...")
-        val movie7 = Movie("Reality Bites", "Jim Jarmusch",simpleDateFormat.parse("10-04-1999"), 9, "Some review...")
-
-        movies.add(movie1)
-        movies.add(movie2)
-        movies.add(movie3)
-        movies.add(movie4)
-        movies.add(movie5)
-        movies.add(movie6)
-        movies.add(movie7)
-
+        realm.beginTransaction()
+        val movie1 = realm.createObject(MovieDTO::class.java, UUID.randomUUID().toString())
+        movie1.title = "Night On Earth"
+        movie1.director = "Jim Jarmusch"
+        movie1.rating = 9
+        movie1.date = simpleDateFormat.parse("03-04-1999")
+        val movie2 = realm.createObject(MovieDTO::class.java, UUID.randomUUID().toString())
+        movie2.title = "In the Mood for Love"
+        movie2.director = "Wong Kar-wai"
+        movie2.rating = 10
+        movie2.date = simpleDateFormat.parse("07-04-2001")
+        val movie3 = realm.createObject(MovieDTO::class.java, UUID.randomUUID().toString())
+        movie3.title = "Pan's labyrinth"
+        movie3.director = "Guillermo del Toro"
+        movie3.rating = 10
+        movie3.date = simpleDateFormat.parse("10-04-2006")
+        val movie4 = realm.createObject(MovieDTO::class.java, UUID.randomUUID().toString())
+        movie4.title = "Vertigo"
+        movie4.director = "Alfred Hitchcock"
+        movie4.rating = 10
+        movie4.date = simpleDateFormat.parse("10-04-1958")
+        val movie5 = realm.createObject(MovieDTO::class.java, UUID.randomUUID().toString())
+        movie5.title = "Her"
+        movie5.director = "Spike Jonze"
+        movie5.rating = 10
+        movie5.date = simpleDateFormat.parse("02-02-2014")
+        val movie6 = realm.createObject(MovieDTO::class.java, UUID.randomUUID().toString())
+        movie6.title = "Medianeras"
+        movie6.director = "Gustavo Taretto"
+        movie6.rating = 7
+        movie6.date = simpleDateFormat.parse("10-12-2011")
+        val movie7 = realm.createObject(MovieDTO::class.java, UUID.randomUUID().toString())
+        movie7.title = "Reality Bites"
+        movie7.director = "Jim Jarmusch"
+        movie7.rating = 9
+        movie7.date = simpleDateFormat.parse("10-04-1999")
+        realm.commitTransaction()
     }
 }

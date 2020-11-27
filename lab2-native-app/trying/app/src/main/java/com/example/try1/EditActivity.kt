@@ -6,15 +6,17 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.text.SimpleDateFormat
 import java.util.*
 
 class EditActivity: AppCompatActivity() {
     private var position: Int = 0
+    private var movie: Movie? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.edit_view_activity)
-        val movie = intent.getParcelableExtra("movie") as Movie?
+        this.movie = intent.getParcelableExtra("movie") as Movie?
         val aux = intent.getIntExtra("position", 0)
         if (aux != 0) this.position=aux
         init_inputs(movie)
@@ -63,7 +65,7 @@ class EditActivity: AppCompatActivity() {
             correct = false
         }
 
-        val editedMovie = Movie(titleText, directorText, Date(2020,11,1), 7, reviewText)
+        val editedMovie = Movie(this.movie?.id!!, titleText, directorText, Date(2020,11,1), 7, reviewText)
 
         if(correct){
             val intent = Intent()
