@@ -25,6 +25,13 @@ The design is made for my liking, which is colourful, a bit eyesore and stupid.
     You should be able to demo all CRUD operations, using fake/in-memory data.
     Either of Flutter, React-Native, NativeScript, or Any other mobile multi-platform framework.
     
-   <i>I picked react-native, #TODO.</i>
+   <i>I picked react-native.</i>
   </p>
+    <li> Laboratory 4 <p> CrudProject - With local DB
+
+    Convert one of the previous UI Only projects, at your choice, to use a local DB.
+    All the CRUD operations should retrieve/send data from/to a local database.
+    You should be able to demo all CRUD operations, using a local DB engine (No cloud services are allowed).
+   <i> I integrated Realm into the native application </i>
+   </p>
 </ul>
