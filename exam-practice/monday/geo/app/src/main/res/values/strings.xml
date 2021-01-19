@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name" translatable="false">Exams</string>
+    <string name="title_event_detail">Exam Details</string>
+    <string name="add">Add</string>
+    <string name="exam_name">Exam name</string>
+    <string name="name">Name</string>
+</resources>
